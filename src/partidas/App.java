@@ -21,12 +21,15 @@ public class App {
         }
 
         // Testando as operações
+        System.out.println("****************************************");
         System.out.println("Dados das Partidas:");
         operacoes.imprimir(new ArrayList<Partida>(chutesPorPartida.keySet()));
 
+        System.out.println("****************************************");
         System.out.println("\nDados dos Chutes por Partida:");
         operacoes.imprimir(chutesPorPartida);
-
+        
+        System.out.println("****************************************");
         System.out.println("\nOrdenando os Chutes por Partida:");
         Map<Partida, List<Chute>> chutesOrdenados = operacoes.ordenar(chutesPorPartida);
         operacoes.imprimir(chutesOrdenados);
@@ -34,12 +37,9 @@ public class App {
         List<Chute> padrao = new ArrayList<>();
         padrao.add(new Chute(80, 500, 200)); // Exemplo de um padrão de chute
 
-        System.out.println("\nProcurando padrão de chute...");
-        boolean padraoEncontrado = operacoes.procurarPadrao(chutesPorPartida, padrao);
-        if (padraoEncontrado) {
-            System.out.println("Padrão de chute encontrado em uma ou mais partidas.");
-        } else {
-            System.out.println("Padrão de chute não encontrado em nenhuma partida.");
-        }
+        double mediaVelocidadesCubico = operacoes.calcularMediaVelocidadesCubico(chutesPorPartida);
+        System.out.println("****************************************");
+        System.out.println("");
+        System.out.println("Média das velocidades: " + mediaVelocidadesCubico);
     }
 }
