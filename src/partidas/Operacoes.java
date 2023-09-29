@@ -10,5 +10,5 @@ public interface Operacoes<K, V> {
 
     Map<K, List<V>> ordenar(Map<K, List<V>> leituras);
 
-    boolean procurarPadrao(Map<K, List<V>> leituras, List<V> padrao);
+    public double calcularMediaVelocidadesCubico(Map<Partida, List<Chute>> leituras);
 }
