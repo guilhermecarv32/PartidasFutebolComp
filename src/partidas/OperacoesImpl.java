@@ -41,32 +41,26 @@ public class OperacoesImpl implements Operacoes<Partida, Chute> {
     }
 
     @Override
-    public boolean procurarPadrao(Map<Partida, List<Chute>> chutesPorPartida, List<Chute> padrao) {
-        int totalDeIguais = 0;
+    public double calcularMediaVelocidadesCubico(Map<Partida, List<Chute>> leituras) {
+        double somaVelocidades = 0;
+        int contador = 0;
 
-        inicioDeProcura:
-        for (Partida partida : chutesPorPartida.keySet()) {
-            List<Chute> chutes = chutesPorPartida.get(partida);
-            for (int i = 0; i < chutes.size() - padrao.size(); i++) {
-                for (int j = 0; j < padrao.size(); j++) {
-                    Chute chuteAtual = chutes.get(i + j);
-                    Chute chutePadrao = padrao.get(j);
-                    if (chuteAtual.getVelocidade() == chutePadrao.getVelocidade() &&
-                        chuteAtual.getRPM() == chutePadrao.getRPM() &&
-                        chuteAtual.getForca() == chutePadrao.getForca()) {
-                        totalDeIguais++;
-
-                        if (totalDeIguais == padrao.size()) {
-                            break inicioDeProcura;
-                        }
-                    } else {
-                        totalDeIguais = 0;
-                        break;
-                    }
+        for (Partida partida : leituras.keySet()) {
+            List<Chute> leiturasPartida = leituras.get(partida);
+            for (Chute chute : leiturasPartida) {
+                for (Chute outroChute : leiturasPartida) {
+                    // Calcula a média das velocidades de todos os pares de chutes
+                    somaVelocidades += (chute.getVelocidade() + outroChute.getVelocidade()) / 2;
+                    contador++;
                 }
             }
         }
 
-        return (totalDeIguais == padrao.size());
+        if (contador == 0) {
+            return 0;
+        }
+
+        return somaVelocidades / contador;
     }
+
 }
