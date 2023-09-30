@@ -6,7 +6,7 @@ import java.util.TreeMap;
 
 public class OperacoesImpl implements Operacoes<Partida, Chute> {
 
-	/**
+	/*
      * retorna as partidas
      * 
      * a complexidade deste metodo é linear, O(N), porque o total de passos de execução
