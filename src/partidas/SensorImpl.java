@@ -11,6 +11,11 @@ public class SensorImpl implements Sensor<Chute> {
     private static final int FORCA_MEDIA = 200;
     private static final int OSCILACAO_MAXIMA = 10;
 
+    /*
+    gerador de leituras aleatorias, cuja complexidade é linear, O(N), 
+    porque tem um loop que itera uma vez pelo total de leituras pedidas
+    */
+    
     @Override
     public List<Chute> gerarLeituras(int totalLeituras) {
         List<Chute> leituras = new ArrayList<>();
