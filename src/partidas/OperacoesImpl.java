@@ -7,10 +7,10 @@ import java.util.TreeMap;
 public class OperacoesImpl implements Operacoes<Partida, Chute> {
 
 	/*
-     * retorna as partidas
-     * 
-     * a complexidade deste metodo é linear, O(N), porque o total de passos de execução
-     * cresce linearmente em relação ao tamanho da entrada de dados(total de partidas)
+     retorna as partidas
+     
+     a complexidade deste metodo é linear, O(N), porque o total de passos de execução
+     cresce linearmente em relação ao tamanho da entrada de dados(total de partidas)
      */
 	
     @Override
@@ -20,11 +20,11 @@ public class OperacoesImpl implements Operacoes<Partida, Chute> {
         }
     }
 
-    /**
-     * retorna as informações dos chutes de cada partida
-     * 
-     * a complexidade é quadrática, O(N^2), porque existe um loop aninhado em
-     * um mais externo
+    /*
+     retorna as informações dos chutes de cada partida
+     
+     a complexidade é quadrática, O(N^2), porque existe um loop aninhado em
+     um mais externo
      */
     
     @Override
@@ -40,11 +40,11 @@ public class OperacoesImpl implements Operacoes<Partida, Chute> {
     }
     
     /**
-     * ordena os chutes de cada partida com base na velocidade
-     * 
-     * a complexidade deste metodo é, N^2LOGN, porque existe um loop neste metodo,
-     * mas ele realiza uma chamada ao algoritmo de ordenacao cuja complexidade é
-     * NLogN
+     ordena os chutes de cada partida com base na velocidade
+     
+     a complexidade deste metodo é, N^2LOGN, porque existe um loop neste metodo,
+     mas ele realiza uma chamada ao algoritmo de ordenacao cuja complexidade é
+     NLogN
      */
 
     @Override
