@@ -8,7 +8,9 @@ import java.util.TreeMap;
 public class App {
 
     private static final int TOTAL_DE_PARTIDAS = 10;
-    private static final int TOTAL_DE_CHUTES_POR_PARTIDA = 3;
+    private static final int TOTAL_DE_CHUTES_POR_PARTIDA = 5;
+    
+    //complexidade linear, O(N), porque tem um for que depende do total de partidas
 
     public static void main(String[] args) {
         Operacoes<Partida, Chute> operacoes = new OperacoesImpl();
@@ -21,23 +23,28 @@ public class App {
         }
 
         // Testando as operações
+        //d1
         System.out.println("****************************************");
-        System.out.println("Dados das Partidas:");
+        System.out.println("Partidas:");
+        System.out.println(" ");
         operacoes.imprimir(new ArrayList<Partida>(chutesPorPartida.keySet()));
 
+        //d2
+        System.out.println(" ");
         System.out.println("****************************************");
         System.out.println("\nDados dos Chutes por Partida:");
         operacoes.imprimir(chutesPorPartida);
         
+        //d3
+        System.out.println(" ");
         System.out.println("****************************************");
         System.out.println("\nOrdenando os Chutes por Partida:");
         Map<Partida, List<Chute>> chutesOrdenados = operacoes.ordenar(chutesPorPartida);
         operacoes.imprimir(chutesOrdenados);
 
-        List<Chute> padrao = new ArrayList<>();
-        padrao.add(new Chute(80, 500, 200)); // Exemplo de um padrão de chute
-
-        double mediaVelocidadesCubico = operacoes.calcularMediaVelocidadesCubico(chutesPorPartida);
+        //d4
+        double mediaVelocidadesCubico = operacoes.calcularMediaVelocidades(chutesPorPartida);
+        System.out.println(" ");
         System.out.println("****************************************");
         System.out.println("");
         System.out.println("Média das velocidades: " + mediaVelocidadesCubico);
