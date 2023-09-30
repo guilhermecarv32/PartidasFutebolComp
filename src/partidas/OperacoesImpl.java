@@ -39,7 +39,7 @@ public class OperacoesImpl implements Operacoes<Partida, Chute> {
         }
     }
     
-    /**
+    /*
      ordena os chutes de cada partida com base na velocidade
      
      a complexidade deste metodo é, N^2LOGN, porque existe um loop neste metodo,
@@ -62,15 +62,15 @@ public class OperacoesImpl implements Operacoes<Partida, Chute> {
         return chutesOrdenados;
     }
 
-    /**
-     * este método serve para calcular a média das velocidades dos chutes
-     * 
-     * a complexidade é O(N^3), portanto, cúbica, porque existem 3 loops aninhados
-     * 
-     * este algoritmo pode tender a ser uma execucao de brute force caso
-     * sejam muitas partidas sendo monitoradas e o total de chutes
-     * coletados for uma entrada de dados muito grande
-     **/
+    /*
+     este método serve para calcular a média das velocidades dos chutes
+     
+     a complexidade é O(N^3), portanto, cúbica, porque existem 3 loops aninhados
+     
+     este algoritmo pode tender a ser uma execucao de brute force caso
+     sejam muitas partidas sendo monitoradas e o total de chutes
+     coletados for uma entrada de dados muito grande
+     */
     
     @Override
     public double calcularMediaVelocidades(Map<Partida, List<Chute>> leituras) {
