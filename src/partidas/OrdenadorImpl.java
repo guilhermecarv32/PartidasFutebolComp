@@ -5,6 +5,14 @@ import java.util.List;
 
 public class OrdenadorImpl extends Ordenador<Chute> {
 
+	/* classe auxiliadora para ordenacao
+	
+	como se trata de um merge sort, a complexidade é NLogN, porque primeiramente
+	o algoritmo divide a colecao de dados a ser ordenada e, apos a divisao, 
+	junta cada sub-colecao de dados para chegar ao ordenamento.
+	
+	*/
+	
     public OrdenadorImpl(List<Chute> leituras) {
         super(leituras);
     }
