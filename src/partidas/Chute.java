@@ -1,6 +1,12 @@
 package partidas;
 
 public class Chute {
+	
+	/*
+	classe para simular o valor monitorado, chute,
+	cuja complexidade é constante, O(1)
+	*/
+	
     private int velocidade;
     private int rpm;
     private int forca;
